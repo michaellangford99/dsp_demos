@@ -1,0 +1,31 @@
+---
+layout: slideshow
+title: Signal processing CV
+description: Signal processing CV
+
+eleventyNavigation:
+  key: dsp_cv
+  parent: engineering
+---
+
+<div class="carousel-item active">
+
+<h1 class="text-center">Signal processing examples</h1>
+<h2 class="text-center">Michael Langford</h2>
+
+</div>
+
+{% assign navPages = collections.all | eleventyNavigation: "dsp_cv" %}
+
+{%- for post in collections.all -%}
+{%- for navPage in navPages -%}
+{%- if navPage.url == post.url -%}
+
+
+{{ post.content  }}
+
+<!--<img src={{post.url | append: post.data.background_img}} class="card-img-bottom" alt="..."> -->
+
+{%- endif -%}
+{%- endfor -%}
+{%- endfor -%}
