@@ -48,14 +48,14 @@ $$p(\bar X, \bar \theta_0) = \frac{1}{(2\pi \sigma^2)^{N/2}}exp\left(-\frac{1}{2
 
 MLE of parameter vector:
 
-$$\hat{\bar \theta} = MLE \{ \bar \theta \} = \underset{\bar \theta}{textnormal{argmax} } p(\bar X; \bar \theta)$$
+$$\hat{\bar \theta} = MLE \{ \bar \theta \} = \underset{\bar \theta}{\textnormal{argmax} } p(\bar X; \bar \theta)$$
 
-$$\hat{\bar \theta} = \underset{\bar \theta}{textnormal{argmax} } \frac{1}{(2\pi \sigma^2)^{N/2}}exp\left(-\frac{1}{2}\sum_{n=-\infty}^{\infty}
+$$\hat{\bar \theta} = \underset{\bar \theta}{\textnormal{argmax} } \frac{1}{(2\pi \sigma^2)^{N/2}}exp\left(-\frac{1}{2}\sum_{n=-\infty}^{\infty}
 |x[n]|^2 - x[n]s^*[n-n_0]e^{-j2\pi f_0n\Delta t} - x^*[n]s[n-n_0]e^{j2\pi f_0n\Delta t}
 +|s[n-n_0]|^2
 \right)$$
 
-$$ = \underset{\bar \theta}{textnormal{argmin} } \sum_{n=-\infty}^{\infty}
+$$ = \underset{\bar \theta}{\textnormal{argmin} } \sum_{n=-\infty}^{\infty}
 |x[n]|^2 - x[n]s^*[n-n_0]e^{-j2\pi f_0n\Delta t} - x^*[n]s[n-n_0]e^{j2\pi f_0n\Delta t}
 +|s[n-n_0]|^2
 $$
@@ -68,29 +68,29 @@ $$
 
 $$y[n] = x[n]s^*[n-n_0]e^{-j2\pi f_0n\Delta t}$$
 
-$$ = \underset{\bar \theta}{textnormal{argmax} } \sum_{n=-\infty}^{\infty}
+$$ = \underset{\bar \theta}{\textnormal{argmax} } \sum_{n=-\infty}^{\infty}
 y[n] + y^*[n]
 $$
 
-$$ = \underset{\bar \theta}{textnormal{argmax} } \sum_{n=-\infty}^{\infty}
+$$ = \underset{\bar \theta}{\textnormal{argmax} } \sum_{n=-\infty}^{\infty}
 2 \mathbb{R}e[y[n]]
 $$
 
-$$ = \underset{\bar \theta}{textnormal{argmax} } \sum_{n=-\infty}^{\infty}
+$$ = \underset{\bar \theta}{\textnormal{argmax} } \sum_{n=-\infty}^{\infty}
 \mathbb{R}e[x[n]s^*[n-n_0]e^{-j2\pi f_0n\Delta t}]
 $$
 
 Summation and $\mathbb{R}e$ are interchangeable
 
-$$ = \underset{\bar \theta}{textnormal{argmax} } \mathbb{R}e\left[\sum_{n=-\infty}^{\infty}
+$$ = \underset{\bar \theta}{\textnormal{argmax} } \mathbb{R}e\left[\sum_{n=-\infty}^{\infty}
 x[n]s^*[n-n_0]e^{-j2\pi f_0n\Delta t}\right]
 $$
 
 This is identical to the form of the discretized CAF (aside from a multiplicative constant $\Delta t$), leaving:
 
 
-$$ = \underset{\bar \theta}{textnormal{argmax} } \mathbb{R}e\left[\chi[n, k]\right]$$
+$$ = \underset{\bar \theta}{\textnormal{argmax} } \mathbb{R}e\left[\chi[n, k]\right]$$
 
 (introducing frequency discretization of $k\Delta f = f_0$ as well)
 
-Again, I'm confident it aught to be $\underset{\bar \theta}{textnormal{argmax} } \left|\chi[n, k]\right|$, but this is what I got. I'm not sure where I went wrong, but this is where I'm at right now.
+Again, I'm confident it aught to be $\underset{\bar \theta}{\textnormal{argmax} } \left|\chi[n, k]\right|$, but this is what I got. I'm not sure where I went wrong, but this is where I'm at right now.
