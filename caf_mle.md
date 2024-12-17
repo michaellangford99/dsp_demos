@@ -34,15 +34,15 @@ $$x[n] = s[n - n_0] e^{j2\pi f_0 n \Delta t} + w[n]$$
 
 Then expanding $\bar X$ and $\bar s_0$
 
-$$p(\bar X, \bar \theta_0) = \frac{1}{(2\pi \sigma^2)^{N/2}}exp\left(-\frac{1}{2}\sum_{n=-\infty}^{\infty}(x^*[n] - s^*[n-n_0]e^{-j2\pi f_0n\Delta t})(x[n] - s[n-n_0]e^{j2\pi f_0n\Delta t})\right)$$
+$$p(\bar X, \bar \theta_0) = \frac{1}{(2\pi \sigma^2)^{N/2}}exp\left(-\frac{1}{2}\sum_{n=-\infty}^{\infty}(x^\ast[n] - s^\ast[n-n_0]e^{-j2\pi f_0n\Delta t})(x[n] - s[n-n_0]e^{j2\pi f_0n\Delta t})\right)$$
 
 $$p(\bar X, \bar \theta_0) = \frac{1}{(2\pi \sigma^2)^{N/2}}exp\left(-\frac{1}{2}\sum_{n=-\infty}^{\infty}
-|x[n]|^2 - x[n]s^*[n-n_0]e^{-j2\pi f_0n\Delta t} - x^*[n]s[n-n_0]e^{j2\pi f_0n\Delta t}
-+s[n-n_0]s^*[n-n_0]e^{0}
+|x[n]|^2 - x[n]s^\ast[n-n_0]e^{-j2\pi f_0n\Delta t} - x^\ast[n]s[n-n_0]e^{j2\pi f_0n\Delta t}
++s[n-n_0]s^\ast[n-n_0]e^{0}
 \right)$$
 
 $$p(\bar X, \bar \theta_0) = \frac{1}{(2\pi \sigma^2)^{N/2}}exp\left(-\frac{1}{2}\sum_{n=-\infty}^{\infty}
-|x[n]|^2 - x[n]s^*[n-n_0]e^{-j2\pi f_0n\Delta t} - x^*[n]s[n-n_0]e^{j2\pi f_0n\Delta t}
+|x[n]|^2 - x[n]s^\ast[n-n_0]e^{-j2\pi f_0n\Delta t} - x^\ast[n]s[n-n_0]e^{j2\pi f_0n\Delta t}
 +|s[n-n_0]|^2
 \right)$$
 
@@ -51,25 +51,25 @@ MLE of parameter vector:
 $$\hat{\bar \theta} = MLE \{ \bar \theta \} = \underset{\bar \theta}{\textnormal{argmax} } p(\bar X; \bar \theta)$$
 
 $$\hat{\bar \theta} = \underset{\bar \theta}{\textnormal{argmax} } \frac{1}{(2\pi \sigma^2)^{N/2}}exp\left(-\frac{1}{2}\sum_{n=-\infty}^{\infty}
-|x[n]|^2 - x[n]s^*[n-n_0]e^{-j2\pi f_0n\Delta t} - x^*[n]s[n-n_0]e^{j2\pi f_0n\Delta t}
+|x[n]|^2 - x[n]s^\ast[n-n_0]e^{-j2\pi f_0n\Delta t} - x^\ast[n]s[n-n_0]e^{j2\pi f_0n\Delta t}
 +|s[n-n_0]|^2
 \right)$$
 
 $$ = \underset{\bar \theta}{\textnormal{argmin} } \sum_{n=-\infty}^{\infty}
-|x[n]|^2 - x[n]s^*[n-n_0]e^{-j2\pi f_0n\Delta t} - x^*[n]s[n-n_0]e^{j2\pi f_0n\Delta t}
+|x[n]|^2 - x[n]s^\ast[n-n_0]e^{-j2\pi f_0n\Delta t} - x^\ast[n]s[n-n_0]e^{j2\pi f_0n\Delta t}
 +|s[n-n_0]|^2
 $$
 
 $\sum|x[n]|^2$ is constant w.r.t the parameter vector, and so is $\sum|s[n-n_0]|^2$, due to the limits of the integral not being affected by the index shift. 
 
 $$ = \underset{\bar \theta}{\textnormal{argmax}} \sum_{n=-\infty}^{\infty}
-x[n]s^*[n-n_0]e^{-j2\pi f_0n\Delta t} + x^*[n]s[n-n_0]e^{j2\pi f_0n\Delta t}
+x[n]s^\ast[n-n_0]e^{-j2\pi f_0n\Delta t} + x^\ast[n]s[n-n_0]e^{j2\pi f_0n\Delta t}
 $$
 
-$$y[n] = x[n]s^*[n-n_0]e^{-j2\pi f_0n\Delta t}$$
+$$y[n] = x[n]s^\ast[n-n_0]e^{-j2\pi f_0n\Delta t}$$
 
 $$ = \underset{\bar \theta}{\textnormal{argmax} } \sum_{n=-\infty}^{\infty}
-y[n] + y^*[n]
+y[n] + y^\ast[n]
 $$
 
 $$ = \underset{\bar \theta}{\textnormal{argmax} } \sum_{n=-\infty}^{\infty}
@@ -77,13 +77,13 @@ $$ = \underset{\bar \theta}{\textnormal{argmax} } \sum_{n=-\infty}^{\infty}
 $$
 
 $$ = \underset{\bar \theta}{\textnormal{argmax} } \sum_{n=-\infty}^{\infty}
-\mathbb{R}e[x[n]s^*[n-n_0]e^{-j2\pi f_0n\Delta t}]
+\mathbb{R}e[x[n]s^\ast[n-n_0]e^{-j2\pi f_0n\Delta t}]
 $$
 
 Summation and $\mathbb{R}e$ are interchangeable
 
 $$ = \underset{\bar \theta}{\textnormal{argmax} } \mathbb{R}e\left[\sum_{n=-\infty}^{\infty}
-x[n]s^*[n-n_0]e^{-j2\pi f_0n\Delta t}\right]
+x[n]s^\ast[n-n_0]e^{-j2\pi f_0n\Delta t}\right]
 $$
 
 This is identical to the form of the discretized CAF (aside from a multiplicative constant $\Delta t$), leaving:
